@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://liubr1491.github.io/sitemap.xml

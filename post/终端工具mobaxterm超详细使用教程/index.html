@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>终端工具MobaXterm超详细使用教程 - 空歌白石的个人博客 - 基于Hugo构建</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="空歌白石" /><meta name="description" content="前言 日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：SecureCRT加SecureFX、XShell加XFTP、WinSCP加FileZilla、PuTTY等等。
+本文将介绍的MobaXterm同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解MobaXterm。
+" /><meta name="keywords" content="Hugo, Java, 技术" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.99.1 with theme even" />
+
+
+<link rel="canonical" href="https://liubr1491.github.io/post/%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7mobaxterm%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="终端工具MobaXterm超详细使用教程" />
+<meta property="og:description" content="前言
+日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：SecureCRT加SecureFX、XShell加XFTP、WinSCP加FileZilla、PuTTY等等。
+本文将介绍的MobaXterm同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解MobaXterm。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://liubr1491.github.io/post/%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7mobaxterm%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-07-05T22:39:45+08:00" />
+<meta property="article:modified_time" content="2022-07-05T22:39:45+08:00" />
+
+<meta itemprop="name" content="终端工具MobaXterm超详细使用教程">
+<meta itemprop="description" content="前言
+日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：SecureCRT加SecureFX、XShell加XFTP、WinSCP加FileZilla、PuTTY等等。
+本文将介绍的MobaXterm同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解MobaXterm。"><meta itemprop="datePublished" content="2022-07-05T22:39:45+08:00" />
+<meta itemprop="dateModified" content="2022-07-05T22:39:45+08:00" />
+<meta itemprop="wordCount" content="3375">
+<meta itemprop="keywords" content="开发工具,MobaXterm,shell," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="终端工具MobaXterm超详细使用教程"/>
+<meta name="twitter:description" content="前言
+日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：SecureCRT加SecureFX、XShell加XFTP、WinSCP加FileZilla、PuTTY等等。
+本文将介绍的MobaXterm同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解MobaXterm。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">空歌白石</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">空歌白石</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">终端工具MobaXterm超详细使用教程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-07-05 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"> 开发工具 </a>
+            </div>
+          <span class="more-meta"> 约 3375 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#视图详解">视图详解</a>
+      <ul>
+        <li><a href="#主页">主页</a></li>
+        <li><a href="#菜单栏">菜单栏</a></li>
+        <li><a href="#侧边栏">侧边栏</a></li>
+      </ul>
+    </li>
+    <li><a href="#功能详解">功能详解</a>
+      <ul>
+        <li><a href="#sessions-management">Sessions management</a></li>
+        <li><a href="#ssh">SSH</a></li>
+        <li><a href="#sftp">SFTP</a></li>
+        <li><a href="#z-modem">Z-modem</a></li>
+        <li><a href="#多终端">多终端</a></li>
+        <li><a href="#windows-rdp">Windows RDP</a></li>
+        <li><a href="#包管理">包管理</a></li>
+        <li><a href="#文本编辑器">文本编辑器</a></li>
+        <li><a href="#录制管理">录制管理</a></li>
+        <li><a href="#本地服务器">本地服务器</a></li>
+        <li><a href="#终端语法高亮">终端语法高亮</a></li>
+        <li><a href="#小游戏">小游戏</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用技巧">使用技巧</a>
+      <ul>
+        <li><a href="#快速建立本地其他终端">快速建立本地其他终端</a></li>
+        <li><a href="#session管理">Session管理</a></li>
+        <li><a href="#字体大小">字体大小</a></li>
+        <li><a href="#选中复制右键粘贴">选中复制，右键粘贴</a></li>
+        <li><a href="#快速弹出终端">快速弹出终端</a></li>
+        <li><a href="#tab分组">tab分组</a></li>
+        <li><a href="#彩蛋">彩蛋</a></li>
+      </ul>
+    </li>
+    <li><a href="#不足">不足</a></li>
+    <li><a href="#总结">总结</a></li>
+    <li><a href="#结束语">结束语</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="前言">前言</h1>
+<p>日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：<code>SecureCRT</code>加<code>SecureFX</code>、<code>XShell</code>加<code>XFTP</code>、<code>WinSCP</code>加<code>FileZilla</code>、<code>PuTTY</code>等等。</p>
+<p>本文将介绍的<code>MobaXterm</code>同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解<code>MobaXterm</code>。</p>
+<h1 id="概述">概述</h1>
+<p>MobaXterm官网地址：https://mobaxterm.mobatek.net/。</p>
+<p>MobaXterm提供所有重要的远程网络工具（SSH、X11、RDP、VNC、FTP、MOSH&hellip;）和 Unix 命令（bash、ls、cat、sed、grep、awk、rsync&hellip;） ，简单安装装即可方便的使用。</p>
+<p>MobaXterm相比XShell，SecureCRT等工具最大的特点就是<code>免费</code>、<code>免费</code>、<code>免费</code>（重要的事情说三遍），特别是当公司对于版权极为重视的情况下，MobaXterm做到了能够达到优秀的地步。实际上MobaXterm也分为<code>Home Edition</code>和<code>Professional Edition</code>，但是免费版本已经足够在日常工作中替代其他收费软件的功能了，某些地方可能做的更好些。</p>
+<p>MobaXterm分为两种安装模式：</p>
+<ol>
+<li>便携式：适合安装在U盘，双击即可运行，这样服务器账号密码什么的就很方便的管理了，出门在外只需要一个U盘就可以连接服务器。</li>
+<li>安装式：普通安装，正常的install安装步骤。</li>
+</ol>
+<p>MobaXterm不同版本功能和收费情况。
+<img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3bd960f9111e4f8abe52639e3684a71b~tplv-k3u1fbpfcp-watermark.image?" alt="MobaXterm price.png"></p>
+<h1 id="视图详解">视图详解</h1>
+<p>个人在开发过程中使用的普通安装的模式，像一般的windows软件一样<code>next-&gt;next-&gt;finish</code>即可。安装完成后，<code>MobaXterm</code>的首页如下图：</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8c5ee719303b49499f6cb8ceb1a8c329~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<blockquote>
+<p>这里有一个特别好用的功能介绍给大家。<code>MobaXterm</code>能够识别当前系统中其他终端工具已有的session记录，第一次打开<code>MobaXterm</code>时，在左侧sessions管理栏中，会有<code>xxx sessions</code>的文件夹。</p>
+</blockquote>
+<h2 id="主页">主页</h2>
+<p>打开<code>MobaXterm</code>后，绝大部分内容会被主页占据，主页有两个快捷按钮以及最近的session记录。可以方便打开终端。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0f680b766ca2401dbf047d259c9fe0ed~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>点击【Start local terminal】有如下session窗口弹出。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ff9f32d553c4da8a0525324f119b340~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="菜单栏">菜单栏</h2>
+<p><code>MobaXterm</code>的菜单栏如下，分为<code>menu bar</code>和<code>buttons bar</code>两行。
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a87fe6b38b1541319f7fa6b30fae24c2~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><code>buttons bar</code>默认的图案有些大，如果需要的话，可以按如下调整展示效果。
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ad573a4b3fc4b02b387c92f1839c5aa~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="侧边栏">侧边栏</h2>
+<p>侧边栏分为三个视图，分别为<code>Sessions</code>，<code>Tools</code>,<code>Macros</code>。</p>
+<p><code>Sessions</code>负责管理使用过的Session配置，可以在任意Session选项上右击进行编辑。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/645ed97aae4747a09e8913b12d694e6f~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><code>Tools</code>分为四部分<code>Terminal games</code>、<code>System</code>、<code>Office</code>、<code>NetWork</code>的工具集合。使用非常的方便。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7b3028692d19433ca6fed23619c1b732~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><code>Macros</code>可以录制操作过程，下次使用时直接回放即可。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/49072d9a8933463bbd7f35d233792d28~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h1 id="功能详解">功能详解</h1>
+<p>本小节将针对<code>MobaXterm</code>的具体功能展开讲解。</p>
+<h2 id="sessions-management">Sessions management</h2>
+<p>菜单栏点击Sessions-&gt;New Session，弹出【Session settings】窗口，可以选择<code>SSH</code>，<code>Telnet</code>，<code>Rsh</code>，<code>RDP</code>，<code>FTP</code>，<code>SFTP</code>，<code>Sehll</code>，<code>Aws S3</code>，<code>File</code>，<code>Browser</code>等众多session类型。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/156e0ff00b4241c28a1e7f7c53627e99~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d6872ed2f594f9c847ef7054c849267~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>点击任意session类型，即可弹出详细的配置选项，下图为SSH的配置项。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a47947fbb0a45efb6485e729a2f70b9~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="ssh">SSH</h2>
+<p>配置<code>Remote host</code>、<code>username</code>等，SSH的私钥需要在【Advanced SSH Settings】选项卡中配置。可以在【Bookmark settings】中配置终端自定义名称，默认使用的<code>Remote host</code>作为名称。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1812a0b5e4964e7da688d5e9d7242ce7~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0be983600c174c868e4d2a37a166938b~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>通过SSH登录远端机器后，界面如下图。特别提出一点，点击【Remote monitoring】在主页下面会弹出登录机器的CPU、内存、网络上传下载速率、磁盘空间、用户名等信息。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/61874dbc92f1477caa1aa6f282acab0a~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="sftp">SFTP</h2>
+<p><code>MobaXterm</code>中集成了SFTP的功能，无需单独安装应用。</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/309915a5be44472082e888ea3ccebd73~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="z-modem">Z-modem</h2>
+<p>某些情况下会使用<code>rz</code>和<code>sz</code>上传和下载文件，<code>MobaXterm</code>的使用方式有些特殊，需要在session窗口右击选择<code>z-modem</code>相关选项处理。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d68d63c481fb4505abdf3bc15458cecb~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="多终端">多终端</h2>
+<p>一次编写，到处执行：此工具允许您同时在许多不同的服务器上执行相同的命令。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/40e05ad8688142aa9024d1f2f9981bb8~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="windows-rdp">Windows RDP</h2>
+<p><code>MobaXterm</code>默认也继承了Windows RDP。在弹框输入windows密码即可。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6045699588c49e5b689edce00109cfc~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>登录后效果。
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/13012bbeb5f245328a0ab631f02f1d1a~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="包管理">包管理</h2>
+<p>MobaXterm 包管理器 (<code>MobApt</code> / <code>apt-get</code>) 允许您直接在 MobaXterm 终端中下载和使用更多 Unix 工具。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/48af8c4d05bb48648d8d3a8cf2cda472~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b63a67d1aca242ea8ef8f5522510848b~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ea28704503349d29d0e7163a9cdfd7e~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="文本编辑器">文本编辑器</h2>
+<p><code>MobaXterm</code>拥有强大的文本编辑功能，可以直接编辑远端的文件。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/46b278cbfa724ea385d692b2a52d9214~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f36dad3436e64992a144653f5a0c156d~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>不仅仅可以进行文本的编辑，同样可以文本的对比。有两种方式进入，一种直接在<code>MobaXterm</code>的主界面中选择<code>MobaDiff</code>，另外一种是在<code>MobaTextEditor</code>中 Special Tools -&gt; Compare with。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d6c9afdd2e6a486ab6a50d277cff0de6~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/022fdd19f43f4bf5935e8eabe20c3acb~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="录制管理">录制管理</h2>
+<p>选择<code>macro</code> ，然后点击，就会进行录制，然后你在终端的操作就会被录制下来，再点击一下，就会终止，保存到制定文件名。</p>
+<p>下次使用重复的操作你只需要点击一下宏脚本，就可以了，省去了重复的步骤。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6cf139d90cee4e889751b80c024e9a73~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="本地服务器">本地服务器</h2>
+<p>某些情况下，我们需要搭建自己本地的服务器，以方便通过http或ftp等协议传输本地文件或数据，一般情况下可能会使用<code>hfs(HTTP File Server)</code>来实现这个需求，但是如果有了<code>MobaXterm</code>就方便很多了。<code>MobaXterm</code>提供了快速开启服务的功能，包括了HTTP、FTP、Telent等众多的协议。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/66acb7ff008e4670b9fe36588168c021~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>HTTP协议的配置如下，点击协议右侧的<code>start</code>按钮，一个简单的HTTP服务器就被开启了。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b6324f437a494b2babafd62a881cedb6~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>本地浏览器中访问 http://localhost:80/ 即可读取默认目录里下的文件，是不是很方便？
+<img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ed58fbd99ddb4bb79f803d3a09fa5264~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="终端语法高亮">终端语法高亮</h2>
+<p>对于任意终端，<code>MobaXterm</code>默认提供了文本高亮的方案，如下图，在打开本地的一个log文件，其中诸多文本已经自动高亮。查看起来十分的高效方便。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8932be90e6794e929504d3f1bd3e2218~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="小游戏">小游戏</h2>
+<p><code>MobaXterm</code>集成了14种小游戏，应该算是终端工具中的一股别样的景色。有<code>数独</code>、<code>扫雷</code>、<code>空当接龙</code>等等。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7ceaa190573043468d3d88d9681438dc~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/250f421f75334b25a391a9d13c2875c1~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e6773fe4f314470ebd7bd5ceab0c66d0~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8df2022c60444b6c8fedfc3d2f9b713d~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d4a914ba1b1449189d5f515500c411a7~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/75743384a00542238fa894cd64914518~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/50475573151b4d78910c0d5a6fb5fa93~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h1 id="使用技巧">使用技巧</h1>
+<h2 id="快速建立本地其他终端">快速建立本地其他终端</h2>
+<p>当需要使用git的终端时，可以直接在本地右击打开<code>git bash</code>，但是过于麻烦，使用<code>MobaXterm</code>可以在一个软件中同时管理本地的git。如下图，在首页选择需要的终端类型即可。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fb4a06b131b54bbcb28a803856436db2~tplv-k3u1fbpfcp-watermark.image?" alt="MobaXterm-right-click.png"></p>
+<h2 id="session管理">Session管理</h2>
+<p>当间隔一段时间不操作终端时，SSH的连接会主动断开，点击<code>R</code>时，可以直接重新开始session。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Session stopped
+</span></span><span class="line"><span class="cl">    - Press &lt;return&gt; to exit tab
+</span></span><span class="line"><span class="cl">    - Press R to restart session
+</span></span><span class="line"><span class="cl">    - Press S to save terminal output to file
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="字体大小">字体大小</h2>
+<p>菜单栏点击 Settings -&gt; Configuration -&gt; Terminal -&gt; Default terminal fornt settings -&gt; front/size</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f5261b250a548e9a72c6afa499f3eec~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>点击<code>ctrl</code>同时滚动鼠标滚轮，可以放大或缩小屏幕字体。但是当重新新建session后，字体仍然会恢复默认值。下图便是通过滚动来放大字体，这个小贴士个人感觉十分有用。</p>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/666d7f812d3a49dbbd494cae1b211a27~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="选中复制右键粘贴">选中复制，右键粘贴</h2>
+<p>选中复制，右键粘贴在SecureCRT有一个十分有用的功能，MobaXterm也有，但是默认处于关闭状态，需要设置一下。</p>
+<p>菜单栏点击 Settings &ndash;&gt; Configuration &ndash;&gt; Terminal , 然后打勾选中。
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/11122a75b3f1432e8c32bcc64181cbea~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="快速弹出终端">快速弹出终端</h2>
+<p>在<code>MobaXterm</code>打开状态下，使用快捷键<code>Ctrl+Alt+M</code>可以在底部快速弹出终端，无需点击<code>MobaXterm</code>，此终端为半透明的。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dde96996e24d4fa9aef401cbb0e6c6ca~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="tab分组">tab分组</h2>
+<p>在任意session标签右击，可以选择【set tab color】为多个session窗口进行分组。</p>
+<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/434ff5ee3fec4cc8b7b4aed07112c549~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h2 id="彩蛋">彩蛋</h2>
+<p>当<code>MobaXterm</code>处于休眠状态时，整个<code>MobaXterm</code>的会有三只小企鹅像下楼梯似的，从屏幕上方移动到下方，并从屏幕左下角或右下角离开。</p>
+<p>这里就不贴图了，卖个关子。大家有兴趣可以下载安装<code>MobaXterm</code>后试试看。
+<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f249976e216348ea95808ddc1d74b7b7~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<h1 id="不足">不足</h1>
+<p>前文中主要介绍了MobaXterm的核心功能，也就是比较优秀的之处，任何工具都不是完美的，MobaXterm也不例外。</p>
+<p>使用<code>MobaXterm</code>时，最大的不足可能就是偶尔的卡顿了，当开启session较多时，来回切换session偶尔会出现卡顿的情况，升级到最新的22.0版本后，卡顿有了明显的减少，相信MobaXterm团队也不不断的对性能进行优化，后面的新版本会越来越好。</p>
+<h1 id="总结">总结</h1>
+<p>由于每个人的习惯以及所处环境并不相同，个人也一直认为适合自己的工具才是最好的工具，因此，希望本文能够帮忙对<code>MobaXterm</code>感兴趣或者正在使用<code>MobaXterm</code>的开发者提供一个快速全面了解<code>MobaXterm</code>的教程或者说明文档。</p>
+<h1 id="结束语">结束语</h1>
+<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ff55fe7d52d343f4b60bc8e56de9dcd1~tplv-k3u1fbpfcp-watermark.image?" alt="image.png"></p>
+<p>今天上海最高气温<code>37℃</code>，适宜宅家写文章。已经很晚了，洗洗睡了。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">空歌白石</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-07-05
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a></span>
+  </p>
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
+          <a href="/tags/mobaxterm/">MobaXterm</a>
+          <a href="/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/01.-what-is-operational-research/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">【程序员学习运筹学】（一）什么是运筹学</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:liubr1491@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/liubr1491" class="iconfont icon-github" title="github"></a>
+      <a href="https://weibo.com/u/2631831764" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="https://www.zhihu.com/people/maybe1491" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="https://www.douban.com/people/196351890" class="iconfont icon-douban" title="douban"></a>
+      <a href="https://space.bilibili.com/473428902" class="iconfont icon-bilibili" title="bilibili"></a>
+      <a href="https://juejin.cn/user/1310273590294168" class="iconfont icon-link" title="link"></a>
+  <a href="https://liubr1491.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>空歌白石</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

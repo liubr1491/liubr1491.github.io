@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Operational-researches on 空歌白石的个人博客 - 基于Hugo构建</title>
+    <link>https://liubr1491.github.io/operational-research/</link>
+    <description>Recent content in Operational-researches on 空歌白石的个人博客 - 基于Hugo构建</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Jul 2022 22:39:45 +0800</lastBuildDate><atom:link href="https://liubr1491.github.io/operational-research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【程序员学习运筹学】（八）图与网络分析</title>
+      <link>https://liubr1491.github.io/operational-research/08.-graph-theory-and-network-analysis/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/08.-graph-theory-and-network-analysis/</guid>
+      <description>图与网络分析</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（二）线性规划</title>
+      <link>https://liubr1491.github.io/operational-research/02.-linear-programming/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/02.-linear-programming/</guid>
+      <description>线性规划</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（九）网络计划</title>
+      <link>https://liubr1491.github.io/operational-research/09.-network-plan/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/09.-network-plan/</guid>
+      <description>网络计划</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（六）非线性规划</title>
+      <link>https://liubr1491.github.io/operational-research/06.-nonlinear-programming/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/06.-nonlinear-programming/</guid>
+      <description>非线性规划</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（七）动态规划</title>
+      <link>https://liubr1491.github.io/operational-research/07.-dynamic-programming/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/07.-dynamic-programming/</guid>
+      <description>动态规划</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（三）运输问题</title>
+      <link>https://liubr1491.github.io/operational-research/03.-transportation-problem/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/03.-transportation-problem/</guid>
+      <description>运输问题</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（十）排队论</title>
+      <link>https://liubr1491.github.io/operational-research/10.-queueing-theory-or-waiting-line/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/10.-queueing-theory-or-waiting-line/</guid>
+      <description>排队论</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（十二）对策论</title>
+      <link>https://liubr1491.github.io/operational-research/12.-game-theory/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/12.-game-theory/</guid>
+      <description>对策论</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（十三）决策分析</title>
+      <link>https://liubr1491.github.io/operational-research/13.-decision-theory/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/13.-decision-theory/</guid>
+      <description>决策分析</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（十四）运筹学的启发式方法</title>
+      <link>https://liubr1491.github.io/operational-research/14.-heuristic-methods-/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/14.-heuristic-methods-/</guid>
+      <description>运筹学的启发式方法</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（十一）存储论</title>
+      <link>https://liubr1491.github.io/operational-research/11.-inventory-theory/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/11.-inventory-theory/</guid>
+      <description>存储论</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（四）目标规划</title>
+      <link>https://liubr1491.github.io/operational-research/04.-goal-programming/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/04.-goal-programming/</guid>
+      <description>目标规划</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（五）整数规划</title>
+      <link>https://liubr1491.github.io/operational-research/05.-integer-programming/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/operational-research/05.-integer-programming/</guid>
+      <description>整数规划</description>
+    </item>
+    
+  </channel>
+</rss>

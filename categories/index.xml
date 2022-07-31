@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 空歌白石的个人博客 - 基于Hugo构建</title>
+    <link>https://liubr1491.github.io/categories/</link>
+    <description>Recent content in Categories on 空歌白石的个人博客 - 基于Hugo构建</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Jul 2022 14:02:45 +0800</lastBuildDate><atom:link href="https://liubr1491.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netty</title>
+      <link>https://liubr1491.github.io/categories/netty/</link>
+      <pubDate>Sun, 31 Jul 2022 14:02:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/categories/netty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>运筹学</title>
+      <link>https://liubr1491.github.io/categories/%E8%BF%90%E7%AD%B9%E5%AD%A6/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/categories/%E8%BF%90%E7%AD%B9%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开发工具</title>
+      <link>https://liubr1491.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Tue, 05 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
