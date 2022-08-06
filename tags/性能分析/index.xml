@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>性能分析 on 空歌白石的个人博客 - 基于Hugo构建</title>
+    <link>https://liubr1491.github.io/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/</link>
+    <description>Recent content in 性能分析 on 空歌白石的个人博客 - 基于Hugo构建</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Aug 2022 10:04:45 +0800</lastBuildDate><atom:link href="https://liubr1491.github.io/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java性能监控与故障处理分析工具（Heap memory和Native memory）</title>
+      <link>https://liubr1491.github.io/post/java%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E4%B8%8E%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7heap-memory%E5%92%8Cnative-memory/</link>
+      <pubDate>Sat, 06 Aug 2022 10:04:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/post/java%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E4%B8%8E%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7heap-memory%E5%92%8Cnative-memory/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在实际的工作中会不断的遇到各种线上问题，包括但不限于内存溢出、服务响应时间上升、线程block等各种情况，这时候就需要性能监控以及故障处理工具来分析和定位问题，google后发现并没有一篇分类清晰、实用的文章能够概括以上对于工具的需求，因此，决定整理一下相关的内容，以供大家学习参考。&lt;/p&gt;
+&lt;p&gt;本文意在介绍了有哪些常用的分析工具，以方便大家能够快速的分析定位问题。&lt;a href=&#34;https://juejin.cn/user/1310273590294168&#34;&gt;@空歌白石&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;文章的整个编写思路可以通过如下思维导图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0b73614005c41fbae2846fc53952e57~tplv-k3u1fbpfcp-watermark.image?&#34; alt=&#34;java-profile-xmind.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里有几点需要说明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;JDK原生工具特别是&lt;code&gt;jmc&lt;/code&gt;以及&lt;code&gt;arthas&lt;/code&gt;是在线实时分析工具，&lt;code&gt;mat&lt;/code&gt;是离线分析工具，&lt;code&gt;jProfiler&lt;/code&gt;也可以支持离线和实时分析。&lt;/li&gt;
+&lt;li&gt;以上工具都是很大篇幅是针对堆内内存进行分析，对于堆外内存的问题分析能力十分有限甚至可以说没有。&lt;/li&gt;
+&lt;li&gt;如果如果确定是堆外内存问题，一般堆外内存溢出排查可结合 &lt;code&gt;gperftools&lt;/code&gt; 与 &lt;code&gt;btrace&lt;/code&gt; 排查。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

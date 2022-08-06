@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 空歌白石的个人博客 - 基于Hugo构建</title>
+    <link>https://liubr1491.github.io/post/</link>
+    <description>Recent content in Posts on 空歌白石的个人博客 - 基于Hugo构建</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Aug 2022 10:04:45 +0800</lastBuildDate><atom:link href="https://liubr1491.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java性能监控与故障处理分析工具（Heap memory和Native memory）</title>
+      <link>https://liubr1491.github.io/post/java%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E4%B8%8E%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7heap-memory%E5%92%8Cnative-memory/</link>
+      <pubDate>Sat, 06 Aug 2022 10:04:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/post/java%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7%E4%B8%8E%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7heap-memory%E5%92%8Cnative-memory/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;在实际的工作中会不断的遇到各种线上问题，包括但不限于内存溢出、服务响应时间上升、线程block等各种情况，这时候就需要性能监控以及故障处理工具来分析和定位问题，google后发现并没有一篇分类清晰、实用的文章能够概括以上对于工具的需求，因此，决定整理一下相关的内容，以供大家学习参考。&lt;/p&gt;
+&lt;p&gt;本文意在介绍了有哪些常用的分析工具，以方便大家能够快速的分析定位问题。&lt;a href=&#34;https://juejin.cn/user/1310273590294168&#34;&gt;@空歌白石&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;文章的整个编写思路可以通过如下思维导图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0b73614005c41fbae2846fc53952e57~tplv-k3u1fbpfcp-watermark.image?&#34; alt=&#34;java-profile-xmind.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这里有几点需要说明：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;JDK原生工具特别是&lt;code&gt;jmc&lt;/code&gt;以及&lt;code&gt;arthas&lt;/code&gt;是在线实时分析工具，&lt;code&gt;mat&lt;/code&gt;是离线分析工具，&lt;code&gt;jProfiler&lt;/code&gt;也可以支持离线和实时分析。&lt;/li&gt;
+&lt;li&gt;以上工具都是很大篇幅是针对堆内内存进行分析，对于堆外内存的问题分析能力十分有限甚至可以说没有。&lt;/li&gt;
+&lt;li&gt;如果如果确定是堆外内存问题，一般堆外内存溢出排查可结合 &lt;code&gt;gperftools&lt;/code&gt; 与 &lt;code&gt;btrace&lt;/code&gt; 排查。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Netty源码剖析学习笔记</title>
+      <link>https://liubr1491.github.io/post/netty%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sun, 31 Jul 2022 14:02:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/post/netty%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;本文记录了学习Netty源码的过程，正片文章内容包含思路分析和源码。&lt;/p&gt;
+&lt;p&gt;本文主要包含：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Netty简介。&lt;/li&gt;
+&lt;li&gt;Netty基本组件。&lt;/li&gt;
+&lt;li&gt;Netty服务端启动。&lt;/li&gt;
+&lt;li&gt;NioEventLoop。&lt;/li&gt;
+&lt;li&gt;Netty如何新建连接。&lt;/li&gt;
+&lt;li&gt;Pipeline。&lt;/li&gt;
+&lt;li&gt;Netty的内存分配ByteBuf。&lt;/li&gt;
+&lt;li&gt;Netty的解码逻辑。&lt;/li&gt;
+&lt;li&gt;Netty的编码逻辑。&lt;/li&gt;
+&lt;li&gt;Netty性能优化工具类。&lt;/li&gt;
+&lt;li&gt;Netty中的设计模式。&lt;/li&gt;
+&lt;li&gt;Netty应用的性能优化。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文源码为当前最新版本：&lt;a href=&#34;https://github.com/netty/netty/tree/4.1&#34;&gt;netty 4.1&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>【程序员学习运筹学】（一）什么是运筹学</title>
+      <link>https://liubr1491.github.io/post/01.-what-is-operational-research/</link>
+      <pubDate>Fri, 08 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/post/01.-what-is-operational-research/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;每一个程序员或开发者都会面临着如何提升系统吞吐量、如何减少系统访问耗时尖刺、如何机器CPU利用率、如何降低系统响应时间、如何减少系统内存占用等问题。通常情况下，我们会分析系统JVM参数、埋点查看耗时模块、优化网络访问方式、优化序列化或压缩方案、数据编码等等方案解决以上的问题。但是如果站在更高的层次上，可以看出我们实际面临的问题一个如何更好的管理我们所拥有的的计算资源，以最大程度的利用计算资源的问题，想到这一层，很容易会联想到本专题的主题&lt;code&gt;运筹学&lt;/code&gt;，正所谓&lt;code&gt;夫运筹帷幄之中，决胜千里之外&lt;/code&gt;。本文作为【程序员学习运筹学】的开篇，首先会介绍下什么是运筹学，让我们一起走进它。&lt;/p&gt;
+&lt;h1 id=&#34;什么是运筹学&#34;&gt;什么是运筹学&lt;/h1&gt;
+&lt;p&gt;运筹学一次最早起源于20世纪30年代。《中国大百科全书》的释义为：&lt;code&gt;运筹学是“是用数学方法研究经济、民政和国防等部门在内外环境的约束条件下合理分配人力、物力、财力等资源，使世纪系统有效运行的技术科学，它可以用来预测发展趋势，制订行动规划和优选可行方案。”&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;运筹学一词在英国称为&lt;code&gt;operational research&lt;/code&gt;，在美国称为&lt;code&gt;operations research&lt;/code&gt;，可以直译为“运用研究”或“作业研究”。由于运筹学涉及的主要领域是管理问题，研究的主要手动是建立数据模型，并比较多的运用各种数学工具。从这点触发，有人将运筹学称为“管理数学”。1957年我国从“夫运筹帷幄之中，决胜千里之外”（见《史记高祖本纪》）这句古语中摘取“运筹”二字，将 &lt;code&gt;O.R.&lt;/code&gt;正式译为运筹学，包含运用筹划，以策略取胜等意义，比较恰当地反映了这门学科的性质和内涵。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>终端工具MobaXterm超详细使用教程</title>
+      <link>https://liubr1491.github.io/post/%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7mobaxterm%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Tue, 05 Jul 2022 22:39:45 +0800</pubDate>
+      
+      <guid>https://liubr1491.github.io/post/%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7mobaxterm%E8%B6%85%E8%AF%A6%E7%BB%86%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;日常的开发中Shell、SSH、FTP等终端是必不可少的软件，一款好用的终端软件可以在繁杂的日常开发中有效的提升排查问题以及日常运维的效率。比较著名的终端工具有很多，类似于：&lt;code&gt;SecureCRT&lt;/code&gt;加&lt;code&gt;SecureFX&lt;/code&gt;、&lt;code&gt;XShell&lt;/code&gt;加&lt;code&gt;XFTP&lt;/code&gt;、&lt;code&gt;WinSCP&lt;/code&gt;加&lt;code&gt;FileZilla&lt;/code&gt;、&lt;code&gt;PuTTY&lt;/code&gt;等等。&lt;/p&gt;
+&lt;p&gt;本文将介绍的&lt;code&gt;MobaXterm&lt;/code&gt;同时支持SSH和SFTP，可视化操作文件，不需要再安装ftp工具。作为本人一直在用的终端工具，希望通过本文能够让大家充分了解&lt;code&gt;MobaXterm&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
